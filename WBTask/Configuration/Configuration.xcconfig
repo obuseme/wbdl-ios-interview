@@ -1,0 +1,10 @@
+//
+//  Config.xcconfig
+//  WBTask
+//
+//  Created by Ugur on 04/09/2021.
+//
+
+BASE_URL = https:/$()/gateway.marvel.com/v1/public
+PUBLIC_KEY = 454ebf259a3ca9ed78510baaaa096aeb
+PRIVATE_KEY = be8cf1379e921e2568bfbade65462cd555aa09fa

@@ -15,6 +15,11 @@
 		0C59D54326E12BB00071DEB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C59D54126E12BB00071DEB2 /* LaunchScreen.storyboard */; };
 		0C59D54E26E12BB00071DEB2 /* WBTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C59D54D26E12BB00071DEB2 /* WBTaskTests.swift */; };
 		0C59D55926E12BB10071DEB2 /* WBTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C59D55826E12BB10071DEB2 /* WBTaskUITests.swift */; };
+		0C78FC1426E3F1C900E7A134 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C78FC1326E3F1C900E7A134 /* NetworkProvider.swift */; };
+		0C78FC1726E3F20100E7A134 /* ConnectionCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C78FC1626E3F20100E7A134 /* ConnectionCheck.swift */; };
+		0C78FC1926E3F22B00E7A134 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C78FC1826E3F22B00E7A134 /* NetworkRequest.swift */; };
+		0C78FC1B26E3F24D00E7A134 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C78FC1A26E3F24D00E7A134 /* NetworkError.swift */; };
+		0C78FC1F26E3FD5E00E7A134 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C78FC1E26E3FD5E00E7A134 /* Configuration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,12 @@
 		0C59D55426E12BB10071DEB2 /* WBTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WBTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C59D55826E12BB10071DEB2 /* WBTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBTaskUITests.swift; sourceTree = "<group>"; };
 		0C59D55A26E12BB10071DEB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C78FC1326E3F1C900E7A134 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		0C78FC1626E3F20100E7A134 /* ConnectionCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionCheck.swift; sourceTree = "<group>"; };
+		0C78FC1826E3F22B00E7A134 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		0C78FC1A26E3F24D00E7A134 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		0C78FC1C26E3FCCF00E7A134 /* Configuration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Configuration.xcconfig; sourceTree = "<group>"; };
+		0C78FC1E26E3FD5E00E7A134 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +112,8 @@
 		0C59D53526E12BAD0071DEB2 /* WBTask */ = {
 			isa = PBXGroup;
 			children = (
+				0C78FC1D26E3FD4D00E7A134 /* Configuration */,
+				0C78FC1526E3F1EF00E7A134 /* Utilites */,
 				0C59D53626E12BAD0071DEB2 /* AppDelegate.swift */,
 				0C59D53826E12BAD0071DEB2 /* SceneDelegate.swift */,
 				0CCE9D6726E3D3B700FAC003 /* Resources */,
@@ -129,9 +142,37 @@
 			path = WBTaskUITests;
 			sourceTree = "<group>";
 		};
+		0C78FC1226E3F1B300E7A134 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0C78FC1326E3F1C900E7A134 /* NetworkProvider.swift */,
+				0C78FC1826E3F22B00E7A134 /* NetworkRequest.swift */,
+				0C78FC1A26E3F24D00E7A134 /* NetworkError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		0C78FC1526E3F1EF00E7A134 /* Utilites */ = {
+			isa = PBXGroup;
+			children = (
+				0C78FC1626E3F20100E7A134 /* ConnectionCheck.swift */,
+			);
+			path = Utilites;
+			sourceTree = "<group>";
+		};
+		0C78FC1D26E3FD4D00E7A134 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				0C78FC1C26E3FCCF00E7A134 /* Configuration.xcconfig */,
+				0C78FC1E26E3FD5E00E7A134 /* Configuration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		0CCE9D6526E3D39600FAC003 /* Providers */ = {
 			isa = PBXGroup;
 			children = (
+				0C78FC1226E3F1B300E7A134 /* Network */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -307,8 +348,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C59D53B26E12BAD0071DEB2 /* ViewController.swift in Sources */,
+				0C78FC1B26E3F24D00E7A134 /* NetworkError.swift in Sources */,
+				0C78FC1426E3F1C900E7A134 /* NetworkProvider.swift in Sources */,
 				0C59D53726E12BAD0071DEB2 /* AppDelegate.swift in Sources */,
 				0C59D53926E12BAD0071DEB2 /* SceneDelegate.swift in Sources */,
+				0C78FC1926E3F22B00E7A134 /* NetworkRequest.swift in Sources */,
+				0C78FC1F26E3FD5E00E7A134 /* Configuration.swift in Sources */,
+				0C78FC1726E3F20100E7A134 /* ConnectionCheck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
