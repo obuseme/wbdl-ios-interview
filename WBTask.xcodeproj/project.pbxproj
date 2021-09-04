@@ -164,6 +164,7 @@
 				0C59D52F26E12BAD0071DEB2 /* Sources */,
 				0C59D53026E12BAD0071DEB2 /* Frameworks */,
 				0C59D53126E12BAD0071DEB2 /* Resources */,
+				0CCE9D6826E3D4FF00FAC003 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -278,6 +279,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0CCE9D6826E3D4FF00FAC003 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PATH=/opt/homebrew/bin:$PATH\nif [ -f ~/com.raywenderlich.swiftlint.yml ]; then\n  if which swiftlint >/dev/null; then\n    swiftlint --no-cache --config ~/com.raywenderlich.swiftlint.yml\n  fi\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0C59D52F26E12BAD0071DEB2 /* Sources */ = {
