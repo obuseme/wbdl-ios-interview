@@ -26,10 +26,31 @@ protocol NetworkRequest {
 
 extension NetworkRequest {
   var parameters: RequestParameters? {
-    return nil
+    return RequestParameters.defaultParameters()
   }
 
   var headers: [String: String]? {
     return nil
   }
+}
+
+extension RequestParameters {
+
+  static func defaultParameters() -> RequestParameters {
+    let timestamp = "\(Date().timeIntervalSince1970)"
+    let publicKey: String = Configuration.publicKey
+    let privateKey: String = Configuration.privateKey
+
+    return .url([
+    Keys.timestamp.rawValue: timestamp,
+    Keys.apiKey.rawValue: publicKey,
+    Keys.hash.rawValue: "\(timestamp)\(privateKey)\(publicKey)".md5()
+    ])
+  }
+}
+
+enum Keys: String {
+  case timestamp = "ts"
+  case apiKey = "apikey"
+  case hash
 }
