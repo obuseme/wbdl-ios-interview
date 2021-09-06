@@ -23,6 +23,7 @@
 		0C78FC2326E4F9DC00E7A134 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C78FC2226E4F9DC00E7A134 /* String+MD5.swift */; };
 		0C78FC2626E4FD5D00E7A134 /* HomeComicsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C78FC2526E4FD5D00E7A134 /* HomeComicsService.swift */; };
 		0CFC165326E6723C00418531 /* HomeComics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC165226E6723C00418531 /* HomeComics.swift */; };
+		507A9EB326CD46013570E7DA /* Pods_WBTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2B93A6E9080120EFE301ED /* Pods_WBTask.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,9 @@
 		0C78FC2226E4F9DC00E7A134 /* String+MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
 		0C78FC2526E4FD5D00E7A134 /* HomeComicsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComicsService.swift; sourceTree = "<group>"; };
 		0CFC165226E6723C00418531 /* HomeComics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeComics.swift; sourceTree = "<group>"; };
+		6BC18D9680BA108E14CBF4A0 /* Pods-WBTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WBTask.release.xcconfig"; path = "Target Support Files/Pods-WBTask/Pods-WBTask.release.xcconfig"; sourceTree = "<group>"; };
+		B988E1420D56AC9CFF9B5D9B /* Pods-WBTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WBTask.debug.xcconfig"; path = "Target Support Files/Pods-WBTask/Pods-WBTask.debug.xcconfig"; sourceTree = "<group>"; };
+		CD2B93A6E9080120EFE301ED /* Pods_WBTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WBTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				507A9EB326CD46013570E7DA /* Pods_WBTask.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05202C0BABF912B3E406327C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD2B93A6E9080120EFE301ED /* Pods_WBTask.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0C4CE4EC26E670B20059E246 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +120,8 @@
 				0C59D54C26E12BB00071DEB2 /* WBTaskTests */,
 				0C59D55726E12BB10071DEB2 /* WBTaskUITests */,
 				0C59D53426E12BAD0071DEB2 /* Products */,
+				19CADC5F2A599FA05531EC85 /* Pods */,
+				05202C0BABF912B3E406327C /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -210,6 +225,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		19CADC5F2A599FA05531EC85 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B988E1420D56AC9CFF9B5D9B /* Pods-WBTask.debug.xcconfig */,
+				6BC18D9680BA108E14CBF4A0 /* Pods-WBTask.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -217,10 +242,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0C59D55D26E12BB10071DEB2 /* Build configuration list for PBXNativeTarget "WBTask" */;
 			buildPhases = (
+				9E5F715C266F710F740F3678 /* [CP] Check Pods Manifest.lock */,
 				0C59D52F26E12BAD0071DEB2 /* Sources */,
 				0C59D53026E12BAD0071DEB2 /* Frameworks */,
 				0C59D53126E12BAD0071DEB2 /* Resources */,
 				0CCE9D6826E3D4FF00FAC003 /* SwiftLint */,
+				53AD9A159D19F5495DEB177C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -354,6 +381,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "PATH=/opt/homebrew/bin:$PATH\nif [ -f ~/com.raywenderlich.swiftlint.yml ]; then\n  if which swiftlint >/dev/null; then\n    swiftlint --no-cache --config ~/com.raywenderlich.swiftlint.yml\n  fi\nfi\n";
+		};
+		53AD9A159D19F5495DEB177C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WBTask/Pods-WBTask-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WBTask/Pods-WBTask-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WBTask/Pods-WBTask-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E5F715C266F710F740F3678 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WBTask-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -545,6 +611,7 @@
 		};
 		0C59D55E26E12BB10071DEB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B988E1420D56AC9CFF9B5D9B /* Pods-WBTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -564,6 +631,7 @@
 		};
 		0C59D55F26E12BB10071DEB2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BC18D9680BA108E14CBF4A0 /* Pods-WBTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
