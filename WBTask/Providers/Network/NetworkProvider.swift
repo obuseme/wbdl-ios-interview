@@ -15,6 +15,10 @@ final class NetworkProvider: NSObject, NetworkProviderProtocol {
 
   // MARK: Properties
 
+  static let baseURL = "https://gateway.marvel.com/v1/public"
+  static let publicKey = "454ebf259a3ca9ed78510baaaa096aeb"
+  static let privateKey = "be8cf1379e921e2568bfbade65462cd555aa09fa"
+
   private let successfulHttpCodes = 200..<300
 
   // MARK: NetworkProviderProtocol
@@ -64,7 +68,7 @@ final class NetworkProvider: NSObject, NetworkProviderProtocol {
   }
 
   private func prepareRequest(for request: NetworkRequest) -> URLRequest {
-    let urlString = [Configuration.baseURL + "/" + request.path].joined()
+    let urlString = [NetworkProvider.baseURL + "/" + request.path].joined()
 
     guard let url = URL(string: urlString) else {
       preconditionFailure("Requirements are not met for a valid URL")
