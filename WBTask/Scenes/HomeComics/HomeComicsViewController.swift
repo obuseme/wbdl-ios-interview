@@ -3,13 +3,12 @@
 //  WBTask
 //
 //  Created by Ugur on 06/09/2021.
-//  Copyright (c) 2021 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
 import UIKit
 
 protocol HomeComicsDisplayable: UIViewController {
-  func displayHomeComics()
+  func displayHomeComics(viewModel: [Comics])
 }
 
 final class HomeComicsViewController: UIViewController, HomeComicsDisplayable {
@@ -49,6 +48,6 @@ final class HomeComicsViewController: UIViewController, HomeComicsDisplayable {
 
   // MARK: HomeComicsDisplayable
 
-  func displayHomeComics() {
+  func displayHomeComics(viewModel: [Comics]) {
   }
 }

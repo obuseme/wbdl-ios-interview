@@ -8,7 +8,7 @@
 import UIKit
 
 protocol HomeComicsPresentable {
-  func presentHomeComics()
+  func presentHomeComics(for comics: [Comics])
 }
 
 final class HomeComicsPresenter: HomeComicsPresentable {
@@ -17,6 +17,7 @@ final class HomeComicsPresenter: HomeComicsPresentable {
 
   // MARK: HomeComicsPresentable
 
-  func presentHomeComics() {
+  func presentHomeComics(for comics: [Comics]) {
+    viewController?.displayHomeComics(viewModel: comics)
   }
 }

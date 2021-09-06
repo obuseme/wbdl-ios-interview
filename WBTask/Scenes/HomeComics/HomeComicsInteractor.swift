@@ -28,6 +28,14 @@ final class HomeComicsInteractor: HomeComicsInteractable {
   // MARK: HomeComicsInteractable
 
   func fetchHomeComics() {
-    // Perform network requests here and present afterwards
+
+    worker.fetchComics { [weak self] response in
+      switch response {
+      case .success(let comics):
+        self?.presenter.presentHomeComics(for: comics.data.results)
+      case .failure(let error):
+        print("error")
+      }
+    }
   }
 }

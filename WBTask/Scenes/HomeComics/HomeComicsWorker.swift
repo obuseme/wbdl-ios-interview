@@ -8,13 +8,20 @@
 import UIKit
 
 protocol HomeComicsWorkable {
-  func doSomeWork()
+  func fetchComics(completion: @escaping (Result<HomeComics, NetworkError>) -> Void)
 }
 
 final class HomeComicsWorker: HomeComicsWorkable {
 
+  private let service: HomeComicsServiceProtocol
+
+  init(service: HomeComicsServiceProtocol = HomeComicsService()) {
+    self.service = service
+  }
+
   // MARK: HomeComicsWorkable
 
-  func doSomeWork() {
+  func fetchComics(completion: @escaping (Result<HomeComics, NetworkError>) -> Void) {
+    return service.fetchComics(completion: completion)
   }
 }
