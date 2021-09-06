@@ -3,14 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0C59D53726E12BAD0071DEB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C59D53626E12BAD0071DEB2 /* AppDelegate.swift */; };
 		0C59D53926E12BAD0071DEB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C59D53826E12BAD0071DEB2 /* SceneDelegate.swift */; };
-		0C59D53B26E12BAD0071DEB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C59D53A26E12BAD0071DEB2 /* ViewController.swift */; };
-		0C59D53E26E12BAD0071DEB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C59D53C26E12BAD0071DEB2 /* Main.storyboard */; };
 		0C59D54026E12BB00071DEB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C59D53F26E12BB00071DEB2 /* Assets.xcassets */; };
 		0C59D54326E12BB00071DEB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C59D54126E12BB00071DEB2 /* LaunchScreen.storyboard */; };
 		0C59D54E26E12BB00071DEB2 /* WBTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C59D54D26E12BB00071DEB2 /* WBTaskTests.swift */; };
@@ -22,6 +20,12 @@
 		0C78FC1B26E3F24D00E7A134 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C78FC1A26E3F24D00E7A134 /* NetworkError.swift */; };
 		0C78FC2326E4F9DC00E7A134 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C78FC2226E4F9DC00E7A134 /* String+MD5.swift */; };
 		0C78FC2626E4FD5D00E7A134 /* HomeComicsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C78FC2526E4FD5D00E7A134 /* HomeComicsService.swift */; };
+		0C8FE62E26E67A9400F2C930 /* HomeComicsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8FE62926E67A9400F2C930 /* HomeComicsPresenter.swift */; };
+		0C8FE62F26E67A9400F2C930 /* HomeComicsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8FE62A26E67A9400F2C930 /* HomeComicsWorker.swift */; };
+		0C8FE63026E67A9400F2C930 /* HomeComicsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8FE62B26E67A9400F2C930 /* HomeComicsRouter.swift */; };
+		0C8FE63126E67A9400F2C930 /* HomeComicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8FE62C26E67A9400F2C930 /* HomeComicsViewController.swift */; };
+		0C8FE63226E67A9400F2C930 /* HomeComicsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8FE62D26E67A9400F2C930 /* HomeComicsInteractor.swift */; };
+		0C8FE63526E67B8F00F2C930 /* StyleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8FE63426E67B8F00F2C930 /* StyleProvider.swift */; };
 		0CFC165326E6723C00418531 /* HomeComics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC165226E6723C00418531 /* HomeComics.swift */; };
 		507A9EB326CD46013570E7DA /* Pods_WBTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2B93A6E9080120EFE301ED /* Pods_WBTask.framework */; };
 /* End PBXBuildFile section */
@@ -47,8 +51,6 @@
 		0C59D53326E12BAD0071DEB2 /* WBTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C59D53626E12BAD0071DEB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C59D53826E12BAD0071DEB2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0C59D53A26E12BAD0071DEB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0C59D53D26E12BAD0071DEB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0C59D53F26E12BB00071DEB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C59D54226E12BB00071DEB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C59D54426E12BB00071DEB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,6 +67,12 @@
 		0C78FC1A26E3F24D00E7A134 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		0C78FC2226E4F9DC00E7A134 /* String+MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
 		0C78FC2526E4FD5D00E7A134 /* HomeComicsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComicsService.swift; sourceTree = "<group>"; };
+		0C8FE62926E67A9400F2C930 /* HomeComicsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComicsPresenter.swift; sourceTree = "<group>"; };
+		0C8FE62A26E67A9400F2C930 /* HomeComicsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComicsWorker.swift; sourceTree = "<group>"; };
+		0C8FE62B26E67A9400F2C930 /* HomeComicsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComicsRouter.swift; sourceTree = "<group>"; };
+		0C8FE62C26E67A9400F2C930 /* HomeComicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComicsViewController.swift; sourceTree = "<group>"; };
+		0C8FE62D26E67A9400F2C930 /* HomeComicsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComicsInteractor.swift; sourceTree = "<group>"; };
+		0C8FE63426E67B8F00F2C930 /* StyleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleProvider.swift; sourceTree = "<group>"; };
 		0CFC165226E6723C00418531 /* HomeComics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeComics.swift; sourceTree = "<group>"; };
 		6BC18D9680BA108E14CBF4A0 /* Pods-WBTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WBTask.release.xcconfig"; path = "Target Support Files/Pods-WBTask/Pods-WBTask.release.xcconfig"; sourceTree = "<group>"; };
 		B988E1420D56AC9CFF9B5D9B /* Pods-WBTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WBTask.debug.xcconfig"; path = "Target Support Files/Pods-WBTask/Pods-WBTask.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,7 +155,6 @@
 				0CCE9D6526E3D39600FAC003 /* Providers */,
 				0CCE9D6626E3D3AC00FAC003 /* Scenes */,
 				0C4CE4EC26E670B20059E246 /* Models */,
-				0C59D53A26E12BAD0071DEB2 /* ViewController.swift */,
 			);
 			path = WBTask;
 			sourceTree = "<group>";
@@ -199,9 +206,30 @@
 			path = HomeComicsService;
 			sourceTree = "<group>";
 		};
+		0C8FE61E26E67A4D00F2C930 /* HomeComics */ = {
+			isa = PBXGroup;
+			children = (
+				0C8FE62B26E67A9400F2C930 /* HomeComicsRouter.swift */,
+				0C8FE62C26E67A9400F2C930 /* HomeComicsViewController.swift */,
+				0C8FE62D26E67A9400F2C930 /* HomeComicsInteractor.swift */,
+				0C8FE62A26E67A9400F2C930 /* HomeComicsWorker.swift */,
+				0C8FE62926E67A9400F2C930 /* HomeComicsPresenter.swift */,
+			);
+			path = HomeComics;
+			sourceTree = "<group>";
+		};
+		0C8FE63326E67B8600F2C930 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0C8FE63426E67B8F00F2C930 /* StyleProvider.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		0CCE9D6526E3D39600FAC003 /* Providers */ = {
 			isa = PBXGroup;
 			children = (
+				0C8FE63326E67B8600F2C930 /* UI */,
 				0C78FC1226E3F1B300E7A134 /* Network */,
 			);
 			path = Providers;
@@ -210,6 +238,7 @@
 		0CCE9D6626E3D3AC00FAC003 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0C8FE61E26E67A4D00F2C930 /* HomeComics */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -217,7 +246,6 @@
 		0CCE9D6726E3D3B700FAC003 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0C59D53C26E12BAD0071DEB2 /* Main.storyboard */,
 				0C59D53F26E12BB00071DEB2 /* Assets.xcassets */,
 				0C59D54126E12BB00071DEB2 /* LaunchScreen.storyboard */,
 				0C59D54426E12BB00071DEB2 /* Info.plist */,
@@ -231,7 +259,6 @@
 				B988E1420D56AC9CFF9B5D9B /* Pods-WBTask.debug.xcconfig */,
 				6BC18D9680BA108E14CBF4A0 /* Pods-WBTask.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -343,7 +370,6 @@
 			files = (
 				0C59D54326E12BB00071DEB2 /* LaunchScreen.storyboard in Resources */,
 				0C59D54026E12BB00071DEB2 /* Assets.xcassets in Resources */,
-				0C59D53E26E12BAD0071DEB2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,16 +455,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C78FC2626E4FD5D00E7A134 /* HomeComicsService.swift in Sources */,
-				0C59D53B26E12BAD0071DEB2 /* ViewController.swift in Sources */,
+				0C8FE63026E67A9400F2C930 /* HomeComicsRouter.swift in Sources */,
 				0C78FC1B26E3F24D00E7A134 /* NetworkError.swift in Sources */,
 				0C78FC1426E3F1C900E7A134 /* NetworkProvider.swift in Sources */,
 				0C59D53726E12BAD0071DEB2 /* AppDelegate.swift in Sources */,
+				0C8FE63126E67A9400F2C930 /* HomeComicsViewController.swift in Sources */,
+				0C8FE63226E67A9400F2C930 /* HomeComicsInteractor.swift in Sources */,
 				0C59D53926E12BAD0071DEB2 /* SceneDelegate.swift in Sources */,
 				0C78FC1926E3F22B00E7A134 /* NetworkRequest.swift in Sources */,
 				0CFC165326E6723C00418531 /* HomeComics.swift in Sources */,
+				0C8FE63526E67B8F00F2C930 /* StyleProvider.swift in Sources */,
 				0C78FC2326E4F9DC00E7A134 /* String+MD5.swift in Sources */,
+				0C8FE62F26E67A9400F2C930 /* HomeComicsWorker.swift in Sources */,
 				0C78FC1726E3F20100E7A134 /* ConnectionCheck.swift in Sources */,
 				0C76AAEE26E6398C00761299 /* HomeComicsRequest.swift in Sources */,
+				0C8FE62E26E67A9400F2C930 /* HomeComicsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,14 +505,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0C59D53C26E12BAD0071DEB2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0C59D53D26E12BAD0071DEB2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0C59D54126E12BB00071DEB2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
