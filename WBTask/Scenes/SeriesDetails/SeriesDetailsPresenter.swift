@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol SeriesDetailsPresentable {
+protocol SeriesDetailsPresentable: LoadingPresentable, AlertPresentable {
   func presentSeriesDetails()
 }
 
@@ -18,5 +18,21 @@ class SeriesDetailsPresenter: SeriesDetailsPresentable {
   // MARK: SeriesDetailsPresentable
 
   func presentSeriesDetails() {
+  }
+
+  // MARK: LoadingPresentable
+
+  func presentLoading() {
+    viewController?.displayLoading()
+  }
+
+  func dismissLoading() {
+    viewController?.dismissLoading()
+  }
+
+  // MARK: AlertPresentable
+
+  func presentAlert(title: String, message: String) {
+    viewController?.displayAlert(title: title, message: message)
   }
 }

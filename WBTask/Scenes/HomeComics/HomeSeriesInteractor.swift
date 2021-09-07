@@ -34,7 +34,7 @@ final class HomeSeriesInteractor: HomeSeriesInteractable {
   func fetchHomeSeries() {
     presenter.presentLoading()
 
-    worker.fetchComics { [weak self] response in
+    worker.fetchSeries { [weak self] response in
       switch response {
       case .success(let series):
         self?.series = series.data.results

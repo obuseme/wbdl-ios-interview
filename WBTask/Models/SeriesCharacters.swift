@@ -8,12 +8,12 @@
 import Foundation
 
 
-struct urlWelcome: Codable {
-    let data: CharactersResponse
+struct SeriesCharacters: Codable {
+  let data: CharactersResponse
 }
 
 struct CharactersResponse: Codable {
-    let results: [SeriesCharacter]
+  let results: [SeriesCharacter]
 }
 
 struct SeriesCharacter: Codable {

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol HomeSeriesWorkable {
-  func fetchComics(completion: @escaping (Result<HomeSeries, NetworkError>) -> Void)
+  func fetchSeries(completion: @escaping (Result<HomeSeries, NetworkError>) -> Void)
 }
 
 final class HomeSeriesWorker: HomeSeriesWorkable {
@@ -21,7 +21,7 @@ final class HomeSeriesWorker: HomeSeriesWorkable {
 
   // MARK: HomeSeriesWorkable
 
-  func fetchComics(completion: @escaping (Result<HomeSeries, NetworkError>) -> Void) {
+  func fetchSeries(completion: @escaping (Result<HomeSeries, NetworkError>) -> Void) {
     return service.fetchComics(completion: completion)
   }
 }

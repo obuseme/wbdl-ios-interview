@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SeriesDetailsDisplayable: UIViewController {
+protocol SeriesDetailsDisplayable: LoadingDisplayable, AlertDisplayable {
   func displaySeriesDetails()
 }
 
@@ -39,6 +39,8 @@ final class SeriesDetailsViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
+
+    interactor?.fetchSeriesDetails()
   }
 
   // MARK: Setup

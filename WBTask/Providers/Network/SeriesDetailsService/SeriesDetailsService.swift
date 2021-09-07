@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SeriesDetailsServiceProtocol {
-  func fetchCharacters(for seriesId: Int, completion: @escaping (Result<SeriesCharacter, NetworkError>) -> Void)
+  func fetchCharacters(for seriesId: Int, completion: @escaping (Result<SeriesCharacters, NetworkError>) -> Void)
   func fetchComics(for seriesId: Int, completion: @escaping (Result<SeriesComics, NetworkError>) -> Void)
 }
 
@@ -20,7 +20,7 @@ final class SeriesDetailsService: SeriesDetailsServiceProtocol {
     self.networkProvider = networkProvider
   }
 
-  func fetchCharacters(for seriesId: Int, completion: @escaping (Result<SeriesCharacter, NetworkError>) -> Void) {
+  func fetchCharacters(for seriesId: Int, completion: @escaping (Result<SeriesCharacters, NetworkError>) -> Void) {
     let request = SeriesDetailsRequest.characters(id: seriesId)
 
     networkProvider.performRequest(request) { result in
