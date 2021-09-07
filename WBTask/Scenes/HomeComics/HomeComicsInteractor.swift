@@ -8,6 +8,8 @@
 import UIKit
 
 protocol HomeComicsInteractable {
+  var comics: [Comics]? { get set }
+
   func fetchHomeComics()
 }
 
@@ -17,6 +19,8 @@ final class HomeComicsInteractor: HomeComicsInteractable {
 
   private var presenter: HomeComicsPresentable
   private var worker: HomeComicsWorkable
+
+  var comics: [Comics]?
 
   // MARK: Init
 
@@ -33,6 +37,7 @@ final class HomeComicsInteractor: HomeComicsInteractable {
     worker.fetchComics { [weak self] response in
       switch response {
       case .success(let comics):
+        self?.comics = comics.data.results
         self?.presenter.presentHomeComics(for: comics.data.results)
       case .failure(let error):
         self?.presenter.presentAlert(title: "Error", message: error.description)

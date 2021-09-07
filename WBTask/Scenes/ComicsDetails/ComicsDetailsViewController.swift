@@ -16,6 +16,17 @@ final class ComicsDetailsViewController: UIViewController {
 
   var interactor: ComicsDetailsInteractable?
 
+
+  // MARK: Init
+
+  init(comics: Comics) {
+    super.init(nibName: nil, bundle: nil)
+
+    setupScene()
+
+    interactor?.comics = comics
+  }
+
   // MARK: Object lifecycle
 
   required init?(coder aDecoder: NSCoder) {
@@ -41,8 +52,7 @@ final class ComicsDetailsViewController: UIViewController {
   }
 
   private func setupUI() {
-
-  }
+    view.backgroundColor = StyleProvider.backgroundColor  }
 }
 
 extension ComicsDetailsViewController: ComicsDetailsDisplayable {
