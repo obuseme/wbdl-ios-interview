@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C552F7126E7C7F100E16872 /* ComicsDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C552F6C26E7C7F100E16872 /* ComicsDetailsPresenter.swift */; };
+		0C552F7226E7C7F100E16872 /* ComicsDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C552F6D26E7C7F100E16872 /* ComicsDetailsWorker.swift */; };
+		0C552F7426E7C7F100E16872 /* ComicsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C552F6F26E7C7F100E16872 /* ComicsDetailsViewController.swift */; };
+		0C552F7526E7C7F100E16872 /* ComicsDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C552F7026E7C7F100E16872 /* ComicsDetailsInteractor.swift */; };
 		0C5965E926E7B6C000F56D81 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5965E826E7B6C000F56D81 /* AlertPresentable.swift */; };
 		0C5965EB26E7B6DE00F56D81 /* AlertDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5965EA26E7B6DE00F56D81 /* AlertDisplayable.swift */; };
 		0C5965ED26E7B71100F56D81 /* LoadingPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5965EC26E7B71100F56D81 /* LoadingPresentable.swift */; };
@@ -56,6 +60,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C552F6C26E7C7F100E16872 /* ComicsDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsDetailsPresenter.swift; sourceTree = "<group>"; };
+		0C552F6D26E7C7F100E16872 /* ComicsDetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsDetailsWorker.swift; sourceTree = "<group>"; };
+		0C552F6F26E7C7F100E16872 /* ComicsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsDetailsViewController.swift; sourceTree = "<group>"; };
+		0C552F7026E7C7F100E16872 /* ComicsDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsDetailsInteractor.swift; sourceTree = "<group>"; };
 		0C5965E826E7B6C000F56D81 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
 		0C5965EA26E7B6DE00F56D81 /* AlertDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDisplayable.swift; sourceTree = "<group>"; };
 		0C5965EC26E7B71100F56D81 /* LoadingPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingPresentable.swift; sourceTree = "<group>"; };
@@ -135,6 +143,17 @@
 				0CFC165226E6723C00418531 /* HomeComics.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		0C552F6B26E7C7B600E16872 /* ComicsDetails */ = {
+			isa = PBXGroup;
+			children = (
+				0C552F6F26E7C7F100E16872 /* ComicsDetailsViewController.swift */,
+				0C552F7026E7C7F100E16872 /* ComicsDetailsInteractor.swift */,
+				0C552F6D26E7C7F100E16872 /* ComicsDetailsWorker.swift */,
+				0C552F6C26E7C7F100E16872 /* ComicsDetailsPresenter.swift */,
+			);
+			path = ComicsDetails;
 			sourceTree = "<group>";
 		};
 		0C5965E626E7B69A00F56D81 /* Alert */ = {
@@ -286,6 +305,7 @@
 		0CCE9D6626E3D3AC00FAC003 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0C552F6B26E7C7B600E16872 /* ComicsDetails */,
 				0C8FE61E26E67A4D00F2C930 /* HomeComics */,
 			);
 			path = Scenes;
@@ -503,16 +523,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C78FC2626E4FD5D00E7A134 /* HomeComicsService.swift in Sources */,
+				0C552F7426E7C7F100E16872 /* ComicsDetailsViewController.swift in Sources */,
 				0C8FE63026E67A9400F2C930 /* HomeComicsRouter.swift in Sources */,
+				0C552F7526E7C7F100E16872 /* ComicsDetailsInteractor.swift in Sources */,
 				0C5965E926E7B6C000F56D81 /* AlertPresentable.swift in Sources */,
 				0C8FE63826E67F3300F2C930 /* ComicsTableViewCell.swift in Sources */,
 				0C8FE63A26E67F5800F2C930 /* TypeStringExpressible.swift in Sources */,
 				0C78FC1B26E3F24D00E7A134 /* NetworkError.swift in Sources */,
 				0C78FC1426E3F1C900E7A134 /* NetworkProvider.swift in Sources */,
 				0C59D53726E12BAD0071DEB2 /* AppDelegate.swift in Sources */,
+				0C552F7226E7C7F100E16872 /* ComicsDetailsWorker.swift in Sources */,
 				0C8FE63126E67A9400F2C930 /* HomeComicsViewController.swift in Sources */,
 				0C8FE63226E67A9400F2C930 /* HomeComicsInteractor.swift in Sources */,
 				0C59D53926E12BAD0071DEB2 /* SceneDelegate.swift in Sources */,
+				0C552F7126E7C7F100E16872 /* ComicsDetailsPresenter.swift in Sources */,
 				0C78FC1926E3F22B00E7A134 /* NetworkRequest.swift in Sources */,
 				0CFC165326E6723C00418531 /* HomeComics.swift in Sources */,
 				0C8FE63526E67B8F00F2C930 /* StyleProvider.swift in Sources */,

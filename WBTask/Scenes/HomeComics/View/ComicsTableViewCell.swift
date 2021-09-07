@@ -16,6 +16,8 @@ class ComicsTableViewCell: UITableViewCell {
     let imageView = UIImageView()
     imageView.contentMode = .scaleAspectFill
     imageView.clipsToBounds = true
+    imageView.layer.cornerRadius = 4
+    imageView.clipsToBounds = true
     return imageView
   }()
 
