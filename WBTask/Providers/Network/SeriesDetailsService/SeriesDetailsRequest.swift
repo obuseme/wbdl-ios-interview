@@ -9,14 +9,14 @@ import Foundation
 
 enum SeriesDetailsRequest: NetworkRequest {
   case characters(id: Int)
-  case books(id: Int)
+  case comics(id: Int)
 
   var path: String {
     switch self {
     case .characters(let id):
-      return "\(id)/characters"
-    case .books(let id):
-      return "\(id)/books"
+      return "series/\(id)/characters"
+    case .comics(let id):
+      return "series/\(id)/comics"
     }
   }
 
