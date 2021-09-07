@@ -26,6 +26,17 @@ struct Comics: Codable {
   let description: String?
   let dates: [ComicDate]
   let thumbnail: Thumbnail
+
+  func getDates() -> String {
+    let startDate = dates.first { date in
+      return date.type == .focDate
+    }
+    let endDate = dates.first { date in
+      return date.type == .onsaleDate
+    }
+    return "\(Date.isoDateToNumberedDateString(isoDate: startDate?.date)) - \(Date.isoDateToNumberedDateString(isoDate: endDate?.date))"
+
+  }
 }
 
 // MARK: - DateElement
@@ -41,11 +52,18 @@ enum ComicDateType: String, Codable {
 
 // MARK: - Thumbnail
 struct Thumbnail: Codable {
-  let path: String?
-  let type: String?
+  let path: String
+  let type: String
 
   enum CodingKeys: String, CodingKey {
     case path
     case type = "extension"
+  }
+}
+
+extension Thumbnail {
+  var url: URL? {
+    let urlString = [path + "/portrait_xlarge." + type].joined()
+    return URL(string: urlString)
   }
 }

@@ -26,6 +26,9 @@
 		0C8FE63126E67A9400F2C930 /* HomeComicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8FE62C26E67A9400F2C930 /* HomeComicsViewController.swift */; };
 		0C8FE63226E67A9400F2C930 /* HomeComicsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8FE62D26E67A9400F2C930 /* HomeComicsInteractor.swift */; };
 		0C8FE63526E67B8F00F2C930 /* StyleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8FE63426E67B8F00F2C930 /* StyleProvider.swift */; };
+		0C8FE63826E67F3300F2C930 /* ComicsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8FE63726E67F3300F2C930 /* ComicsTableViewCell.swift */; };
+		0C8FE63A26E67F5800F2C930 /* TypeStringExpressible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8FE63926E67F5800F2C930 /* TypeStringExpressible.swift */; };
+		0C8FE63E26E76A6E00F2C930 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8FE63D26E76A6E00F2C930 /* Date+Extension.swift */; };
 		0CFC165326E6723C00418531 /* HomeComics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC165226E6723C00418531 /* HomeComics.swift */; };
 		507A9EB326CD46013570E7DA /* Pods_WBTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2B93A6E9080120EFE301ED /* Pods_WBTask.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +76,9 @@
 		0C8FE62C26E67A9400F2C930 /* HomeComicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComicsViewController.swift; sourceTree = "<group>"; };
 		0C8FE62D26E67A9400F2C930 /* HomeComicsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComicsInteractor.swift; sourceTree = "<group>"; };
 		0C8FE63426E67B8F00F2C930 /* StyleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleProvider.swift; sourceTree = "<group>"; };
+		0C8FE63726E67F3300F2C930 /* ComicsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsTableViewCell.swift; sourceTree = "<group>"; };
+		0C8FE63926E67F5800F2C930 /* TypeStringExpressible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeStringExpressible.swift; sourceTree = "<group>"; };
+		0C8FE63D26E76A6E00F2C930 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		0CFC165226E6723C00418531 /* HomeComics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeComics.swift; sourceTree = "<group>"; };
 		6BC18D9680BA108E14CBF4A0 /* Pods-WBTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WBTask.release.xcconfig"; path = "Target Support Files/Pods-WBTask/Pods-WBTask.release.xcconfig"; sourceTree = "<group>"; };
 		B988E1420D56AC9CFF9B5D9B /* Pods-WBTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WBTask.debug.xcconfig"; path = "Target Support Files/Pods-WBTask/Pods-WBTask.debug.xcconfig"; sourceTree = "<group>"; };
@@ -193,6 +199,8 @@
 			children = (
 				0C78FC1626E3F20100E7A134 /* ConnectionCheck.swift */,
 				0C78FC2226E4F9DC00E7A134 /* String+MD5.swift */,
+				0C8FE63926E67F5800F2C930 /* TypeStringExpressible.swift */,
+				0C8FE63D26E76A6E00F2C930 /* Date+Extension.swift */,
 			);
 			path = Utilites;
 			sourceTree = "<group>";
@@ -209,8 +217,8 @@
 		0C8FE61E26E67A4D00F2C930 /* HomeComics */ = {
 			isa = PBXGroup;
 			children = (
+				0C8FE63626E67F1B00F2C930 /* View */,
 				0C8FE62B26E67A9400F2C930 /* HomeComicsRouter.swift */,
-				0C8FE62C26E67A9400F2C930 /* HomeComicsViewController.swift */,
 				0C8FE62D26E67A9400F2C930 /* HomeComicsInteractor.swift */,
 				0C8FE62A26E67A9400F2C930 /* HomeComicsWorker.swift */,
 				0C8FE62926E67A9400F2C930 /* HomeComicsPresenter.swift */,
@@ -224,6 +232,15 @@
 				0C8FE63426E67B8F00F2C930 /* StyleProvider.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		0C8FE63626E67F1B00F2C930 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0C8FE62C26E67A9400F2C930 /* HomeComicsViewController.swift */,
+				0C8FE63726E67F3300F2C930 /* ComicsTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		0CCE9D6526E3D39600FAC003 /* Providers */ = {
@@ -456,6 +473,8 @@
 			files = (
 				0C78FC2626E4FD5D00E7A134 /* HomeComicsService.swift in Sources */,
 				0C8FE63026E67A9400F2C930 /* HomeComicsRouter.swift in Sources */,
+				0C8FE63826E67F3300F2C930 /* ComicsTableViewCell.swift in Sources */,
+				0C8FE63A26E67F5800F2C930 /* TypeStringExpressible.swift in Sources */,
 				0C78FC1B26E3F24D00E7A134 /* NetworkError.swift in Sources */,
 				0C78FC1426E3F1C900E7A134 /* NetworkProvider.swift in Sources */,
 				0C59D53726E12BAD0071DEB2 /* AppDelegate.swift in Sources */,
@@ -469,6 +488,7 @@
 				0C8FE62F26E67A9400F2C930 /* HomeComicsWorker.swift in Sources */,
 				0C78FC1726E3F20100E7A134 /* ConnectionCheck.swift in Sources */,
 				0C76AAEE26E6398C00761299 /* HomeComicsRequest.swift in Sources */,
+				0C8FE63E26E76A6E00F2C930 /* Date+Extension.swift in Sources */,
 				0C8FE62E26E67A9400F2C930 /* HomeComicsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
