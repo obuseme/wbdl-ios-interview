@@ -26,17 +26,6 @@ struct Comics: Codable {
   let description: String?
   let dates: [ComicDate]
   let thumbnail: Thumbnail
-
-  func getDates() -> String {
-    let startDate = dates.first { date in
-      return date.type == .focDate
-    }
-    let endDate = dates.first { date in
-      return date.type == .onsaleDate
-    }
-    return "\(Date.isoDateToNumberedDateString(isoDate: startDate?.date)) - \(Date.isoDateToNumberedDateString(isoDate: endDate?.date))"
-
-  }
 }
 
 // MARK: - DateElement

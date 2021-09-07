@@ -8,8 +8,8 @@
 import UIKit
 import SnapKit
 
-protocol HomeComicsDisplayable: UIViewController {
-  func displayHomeComics(viewModel: [Comics])
+protocol HomeComicsDisplayable: LoadingDisplayable, AlertDisplayable {
+  func displayHomeComics(viewModel: [HomeComicsViewModel])
 }
 
 final class HomeComicsViewController: UIViewController {
@@ -17,7 +17,7 @@ final class HomeComicsViewController: UIViewController {
   var interactor: HomeComicsInteractable?
   var router: HomeComicsRouter?
 
-  private var viewModel: [Comics]? {
+  private var viewModel: [HomeComicsViewModel]? {
     didSet {
       guard viewModel != nil else {
         return
@@ -85,7 +85,7 @@ final class HomeComicsViewController: UIViewController {
 // MARK: HomeComicsDisplayable
 
 extension HomeComicsViewController: HomeComicsDisplayable {
-  func displayHomeComics(viewModel: [Comics]) {
+  func displayHomeComics(viewModel: [HomeComicsViewModel]) {
     self.viewModel = viewModel
   }
 }

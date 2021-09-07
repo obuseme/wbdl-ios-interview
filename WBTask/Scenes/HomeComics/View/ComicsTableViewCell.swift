@@ -115,10 +115,10 @@ class ComicsTableViewCell: UITableViewCell {
     }
   }
 
-  func setComicsCell(_ comics: Comics) {
-    thumbnailImage.kf.setImage(with: comics.thumbnail.url)
+  func setComicsCell(_ comics: HomeComicsViewModel) {
+    thumbnailImage.kf.setImage(with: comics.thumbnailURL)
     titleLabel.text = comics.title
-    countLabel.text = "\(comics.issueNumber)"
-    datesLabel.text = comics.getDates()
+    countLabel.text = comics.issueNumber
+    datesLabel.text = comics.dates
   }
 }
