@@ -1,5 +1,5 @@
 //
-//  HomeComicsWorker.swift
+//  HomeSeriesWorker.swift
 //  WBTask
 //
 //  Created by Ugur on 06/09/2021.
@@ -7,21 +7,21 @@
 
 import UIKit
 
-protocol HomeComicsWorkable {
-  func fetchComics(completion: @escaping (Result<HomeComics, NetworkError>) -> Void)
+protocol HomeSeriesWorkable {
+  func fetchComics(completion: @escaping (Result<HomeSeries, NetworkError>) -> Void)
 }
 
-final class HomeComicsWorker: HomeComicsWorkable {
+final class HomeSeriesWorker: HomeSeriesWorkable {
 
-  private let service: HomeComicsServiceProtocol
+  private let service: HomeSeriesServiceProtocol
 
-  init(service: HomeComicsServiceProtocol = HomeComicsService()) {
+  init(service: HomeSeriesServiceProtocol = HomeSeriesService()) {
     self.service = service
   }
 
-  // MARK: HomeComicsWorkable
+  // MARK: HomeSeriesWorkable
 
-  func fetchComics(completion: @escaping (Result<HomeComics, NetworkError>) -> Void) {
+  func fetchComics(completion: @escaping (Result<HomeSeries, NetworkError>) -> Void) {
     return service.fetchComics(completion: completion)
   }
 }

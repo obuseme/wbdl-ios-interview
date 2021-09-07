@@ -1,5 +1,5 @@
 //
-//  HomeComicsInteractor.swift
+//  HomeSeriesInteractor.swift
 //  WBTask
 //
 //  Created by Ugur on 06/09/2021.
@@ -7,38 +7,38 @@
 
 import UIKit
 
-protocol HomeComicsInteractable {
-  var comics: [Comics]? { get set }
+protocol HomeSeriesInteractable {
+  var series: [Series]? { get set }
 
-  func fetchHomeComics()
+  func fetchHomeSeries()
 }
 
-final class HomeComicsInteractor: HomeComicsInteractable {
+final class HomeSeriesInteractor: HomeSeriesInteractable {
 
   // MARK: Properties
 
-  private var presenter: HomeComicsPresentable
-  private var worker: HomeComicsWorkable
+  private var presenter: HomeSeriesPresentable
+  private var worker: HomeSeriesWorkable
 
-  var comics: [Comics]?
+  var series: [Series]?
 
   // MARK: Init
 
-  init(presenter: HomeComicsPresentable, worker: HomeComicsWorkable = HomeComicsWorker()) {
+  init(presenter: HomeSeriesPresentable, worker: HomeSeriesWorkable = HomeSeriesWorker()) {
     self.presenter = presenter
     self.worker = worker
   }
 
-  // MARK: HomeComicsInteractable
+  // MARK: HomeSeriesInteractable
 
-  func fetchHomeComics() {
+  func fetchHomeSeries() {
     presenter.presentLoading()
 
     worker.fetchComics { [weak self] response in
       switch response {
-      case .success(let comics):
-        self?.comics = comics.data.results
-        self?.presenter.presentHomeComics(for: comics.data.results)
+      case .success(let series):
+        self?.series = series.data.results
+        self?.presenter.presentHomeSeries(for: series.data.results)
       case .failure(let error):
         self?.presenter.presentAlert(title: "Error", message: error.description)
       }

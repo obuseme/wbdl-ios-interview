@@ -1,5 +1,5 @@
 //
-//  HomeComics.swift
+//  HomeSeries.swift
 //  WBTask
 //
 //  Created by Ugur on 06/09/2021.
@@ -7,13 +7,12 @@
 
 import Foundation
 
-// MARK: - Welcome
 struct HomeComics: Codable {
-  let data: Response
+  let data: ComicsResponse
 }
 
 // MARK: - DataClass
-struct Response: Codable {
+struct ComicsResponse: Codable {
   let offset, limit, total, count: Int
   let results: [Comics]
 }
@@ -23,8 +22,6 @@ struct Comics: Codable {
   let id: Int
   let title: String
   let issueNumber: Int
-  let description: String?
-  let dates: [ComicDate]
   let thumbnail: Thumbnail
 }
 

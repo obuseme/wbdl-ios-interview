@@ -117,10 +117,10 @@ class ComicsTableViewCell: UITableViewCell {
     }
   }
 
-  func setComicsCell(_ comics: HomeComicsViewModel) {
-    thumbnailImage.kf.setImage(with: comics.thumbnailURL)
-    titleLabel.text = comics.title
-    countLabel.text = comics.issueNumber
-    datesLabel.text = comics.dates
+  func setComicsCell(_ series: Series) {
+    thumbnailImage.kf.setImage(with: series.thumbnail.url)
+    titleLabel.text = series.title
+    countLabel.text = "\(series.comics.available)"
+    datesLabel.text = "\(series.startYear) - \(series.endYear)"
   }
 }

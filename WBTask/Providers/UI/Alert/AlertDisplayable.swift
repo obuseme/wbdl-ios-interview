@@ -18,6 +18,8 @@ extension AlertDisplayable {
     let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
 
     alertController.addAction(okAction)
-    present(alertController, animated: true, completion: nil)
+    DispatchQueue.main.async {
+      self.present(alertController, animated: true, completion: nil)
+    }
   }
 }

@@ -1,19 +1,19 @@
 //
-//  HomeComicsRouter.swift
+//  HomeSeriesRouter.swift
 //  WBTask
 //
 //  Created by Ugur on 06/09/2021.
 
 import UIKit
 
-protocol HomeComicsRoutable {
+protocol HomeSeriesRoutable {
   func navigateToComicsDetails(destination: ComicsDetailsViewController)
 }
 
-class HomeComicsRouter: HomeComicsRoutable {
-  weak var viewController: HomeComicsViewController?
+class HomeSeriesRouter: HomeSeriesRoutable {
+  weak var viewController: HomeSeriesViewController?
 
-  // MARK: HomeComicsRoutable
+  // MARK: HomeSeriesRoutable
 
   func navigateToComicsDetails(destination: ComicsDetailsViewController) {
     viewController?.navigationController?.pushViewController(destination, animated: true)

@@ -1,5 +1,5 @@
 //
-//  HomeComicsService.swift
+//  HomeSeriesService.swift
 //  WBTask
 //
 //  Created by Ugur on 05/09/2021.
@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol HomeComicsServiceProtocol {
-  func fetchComics(completion: @escaping (Result<HomeComics, NetworkError>) -> Void)
+protocol HomeSeriesServiceProtocol {
+  func fetchComics(completion: @escaping (Result<HomeSeries, NetworkError>) -> Void)
 }
 
-final class HomeComicsService: HomeComicsServiceProtocol {
+final class HomeSeriesService: HomeSeriesServiceProtocol {
 
   private let networkProvider: NetworkProviderProtocol
 
@@ -19,8 +19,8 @@ final class HomeComicsService: HomeComicsServiceProtocol {
     self.networkProvider = networkProvider
   }
 
-  func fetchComics(completion: @escaping (Result<HomeComics, NetworkError>) -> Void) {
-    let request = HomeComicsRequest.comics
+  func fetchComics(completion: @escaping (Result<HomeSeries, NetworkError>) -> Void) {
+    let request = HomeSeriesRequest.series
 
     networkProvider.performRequest(request) { result in
       completion(result)

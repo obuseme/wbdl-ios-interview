@@ -8,10 +8,16 @@
 import Foundation
 
 enum ComicsDetailsRequest: NetworkRequest {
-  case comics
+  case characters(id: Int)
+  case books(id: Int)
 
   var path: String {
-    return "comics"
+    switch self {
+    case .characters(let id):
+      return "\(id)/characters"
+    case .books(let id):
+      return "\(id)/books"
+    }
   }
 
   var method: HTTPMethod {

@@ -19,12 +19,12 @@ final class ComicsDetailsViewController: UIViewController {
 
   // MARK: Init
 
-  init(comics: Comics) {
+  init(series: Series) {
     super.init(nibName: nil, bundle: nil)
 
     setupScene()
 
-    interactor?.comics = comics
+    interactor?.series = series
   }
 
   // MARK: Object lifecycle

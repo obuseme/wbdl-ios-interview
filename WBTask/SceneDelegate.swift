@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     window = UIWindow(frame: windowScene.coordinateSpace.bounds)
     window?.windowScene = windowScene
 
-    let navigationController = UINavigationController(rootViewController: HomeComicsViewController())
+    let navigationController = UINavigationController(rootViewController: HomeSeriesViewController())
     navigationController.navigationBar.tintColor = StyleProvider.titleColor
     navigationController.navigationBar.standardAppearance = navigationBarAppearance()
 

@@ -1,5 +1,5 @@
 //
-//  HomeComicsPresenter.swift
+//  HomeSeriesPresenter.swift
 //  WBTask
 //
 //  Created by Ugur on 06/09/2021.
@@ -7,21 +7,18 @@
 
 import UIKit
 
-protocol HomeComicsPresentable: LoadingPresentable, AlertPresentable {
-  func presentHomeComics(for comics: [Comics])
+protocol HomeSeriesPresentable: LoadingPresentable, AlertPresentable {
+  func presentHomeSeries(for series: [Series])
 }
 
-final class HomeComicsPresenter: HomeComicsPresentable {
+final class HomeSeriesPresenter: HomeSeriesPresentable {
 
-  weak var viewController: HomeComicsDisplayable?
+  weak var viewController: HomeSeriesDisplayable?
 
-  // MARK: HomeComicsPresentable
+  // MARK: HomeSeriesPresentable
 
-  func presentHomeComics(for comics: [Comics]) {
-    let viewmodel: [HomeComicsViewModel] = comics.map { comics in
-      return HomeComicsViewModel(comics: comics)
-    }
-    viewController?.displayHomeComics(viewModel: viewmodel)
+  func presentHomeSeries(for series: [Series]) {
+    viewController?.displayHomeSeries(viewModel: series)
   }
 
   // MARK: LoadingPresentable

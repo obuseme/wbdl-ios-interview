@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ComicsDetailsInteractable {
-  var comics: Comics? { get set }
+  var series: Series? { get set }
 
   func fetchComicsDetails()
 }
@@ -20,7 +20,7 @@ final class ComicsDetailsInteractor: ComicsDetailsInteractable {
   private var presenter: ComicsDetailsPresentable
   private var worker: ComicsDetailsWorkable
 
-  var comics: Comics?
+  var series: Series?
 
   // MARK: Init
 

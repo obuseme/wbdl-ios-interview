@@ -1,5 +1,5 @@
 //
-//  HomeComicsViewController.swift
+//  HomeSeriesViewController.swift
 //  WBTask
 //
 //  Created by Ugur on 06/09/2021.
@@ -8,16 +8,16 @@
 import UIKit
 import SnapKit
 
-protocol HomeComicsDisplayable: LoadingDisplayable, AlertDisplayable {
-  func displayHomeComics(viewModel: [HomeComicsViewModel])
+protocol HomeSeriesDisplayable: LoadingDisplayable, AlertDisplayable {
+  func displayHomeSeries(viewModel: [Series])
 }
 
-final class HomeComicsViewController: UIViewController {
+final class HomeSeriesViewController: UIViewController {
 
-  var interactor: HomeComicsInteractable?
-  var router: HomeComicsRouter?
+  var interactor: HomeSeriesInteractable?
+  var router: HomeSeriesRouter?
 
-  private var viewModel: [HomeComicsViewModel]? {
+  private var viewModel: [Series]? {
     didSet {
       guard viewModel != nil else {
         return
@@ -50,16 +50,16 @@ final class HomeComicsViewController: UIViewController {
     setupScene()
     setupUI()
 
-    interactor?.fetchHomeComics()
+    interactor?.fetchHomeSeries()
   }
 
   // MARK: Setup
 
   private func setupScene() {
     let viewController = self
-    let presenter = HomeComicsPresenter()
-    let interactor = HomeComicsInteractor(presenter: presenter)
-    let router = HomeComicsRouter()
+    let presenter = HomeSeriesPresenter()
+    let interactor = HomeSeriesInteractor(presenter: presenter)
+    let router = HomeSeriesRouter()
     viewController.interactor = interactor
     viewController.router = router
     presenter.viewController = viewController
@@ -82,17 +82,17 @@ final class HomeComicsViewController: UIViewController {
   }
 }
 
-// MARK: HomeComicsDisplayable
+// MARK: HomeSeriesDisplayable
 
-extension HomeComicsViewController: HomeComicsDisplayable {
-  func displayHomeComics(viewModel: [HomeComicsViewModel]) {
+extension HomeSeriesViewController: HomeSeriesDisplayable {
+  func displayHomeSeries(viewModel: [Series]) {
     self.viewModel = viewModel
   }
 }
 
 // MARK: UITableViewDataSource
 
-extension HomeComicsViewController: UITableViewDataSource {
+extension HomeSeriesViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     if let cell = tableView.dequeueReusableCell(withIdentifier: ComicsTableViewCell.typeString, for: indexPath) as? ComicsTableViewCell, let comics = viewModel?[indexPath.row] {
       cell.setComicsCell(comics)
@@ -110,12 +110,12 @@ extension HomeComicsViewController: UITableViewDataSource {
 
 // MARK: UITableViewDelegate
 
-extension HomeComicsViewController: UITableViewDelegate {
+extension HomeSeriesViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: false)
 
-    if let comics = interactor?.comics?[indexPath.row] {
-      router?.navigateToComicsDetails(destination: ComicsDetailsViewController(comics: comics))
+    if let series = viewModel?[indexPath.row] {
+      router?.navigateToComicsDetails(destination: ComicsDetailsViewController(series: series))
     }
   }
 }
