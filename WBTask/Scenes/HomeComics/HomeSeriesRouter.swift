@@ -7,7 +7,7 @@
 import UIKit
 
 protocol HomeSeriesRoutable {
-  func navigateToComicsDetails(destination: ComicsDetailsViewController)
+  func navigateToSeriesDetails(destination: SeriesDetailsViewController)
 }
 
 class HomeSeriesRouter: HomeSeriesRoutable {
@@ -15,7 +15,7 @@ class HomeSeriesRouter: HomeSeriesRoutable {
 
   // MARK: HomeSeriesRoutable
 
-  func navigateToComicsDetails(destination: ComicsDetailsViewController) {
+  func navigateToSeriesDetails(destination: SeriesDetailsViewController) {
     viewController?.navigationController?.pushViewController(destination, animated: true)
   }
 }

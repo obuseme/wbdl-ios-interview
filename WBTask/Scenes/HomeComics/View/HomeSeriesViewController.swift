@@ -38,7 +38,7 @@ final class HomeSeriesViewController: UIViewController {
     tableView.allowsSelection = true
     tableView.rowHeight = UITableView.automaticDimension
     tableView.estimatedRowHeight = 180
-    tableView.register(ComicsTableViewCell.self, forCellReuseIdentifier: ComicsTableViewCell.typeString)
+    tableView.register(SeriesTableViewCell.self, forCellReuseIdentifier: SeriesTableViewCell.typeString)
     return tableView
   }()
 
@@ -94,7 +94,7 @@ extension HomeSeriesViewController: HomeSeriesDisplayable {
 
 extension HomeSeriesViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    if let cell = tableView.dequeueReusableCell(withIdentifier: ComicsTableViewCell.typeString, for: indexPath) as? ComicsTableViewCell, let comics = viewModel?[indexPath.row] {
+    if let cell = tableView.dequeueReusableCell(withIdentifier: SeriesTableViewCell.typeString, for: indexPath) as? SeriesTableViewCell, let comics = viewModel?[indexPath.row] {
       cell.setComicsCell(comics)
       return cell
     }
@@ -115,7 +115,7 @@ extension HomeSeriesViewController: UITableViewDelegate {
     tableView.deselectRow(at: indexPath, animated: false)
 
     if let series = viewModel?[indexPath.row] {
-      router?.navigateToComicsDetails(destination: ComicsDetailsViewController(series: series))
+      router?.navigateToSeriesDetails(destination: SeriesDetailsViewController(series: series))
     }
   }
 }

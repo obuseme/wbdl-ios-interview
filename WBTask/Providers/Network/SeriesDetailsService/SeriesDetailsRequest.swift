@@ -1,5 +1,5 @@
 //
-//  ComicsDetailsRequest.swift
+//  SeriesDetailsRequest.swift
 //  WBTask
 //
 //  Created by Ugur on 07/09/2021.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ComicsDetailsRequest: NetworkRequest {
+enum SeriesDetailsRequest: NetworkRequest {
   case characters(id: Int)
   case books(id: Int)
 

@@ -1,5 +1,5 @@
 //
-//  ComicsTableViewCell.swift
+//  SeriesTableViewCell.swift
 //  WBTask
 //
 //  Created by Ugur on 06/09/2021.
@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class ComicsTableViewCell: UITableViewCell {
+class SeriesTableViewCell: UITableViewCell {
 
   // MARK: - UI
 

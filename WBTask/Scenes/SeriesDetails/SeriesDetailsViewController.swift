@@ -1,5 +1,5 @@
 //
-//  ComicsDetailsViewController.swift
+//  SeriesDetailsViewController.swift
 //  WBTask
 //
 //  Created by Ugur on 07/09/2021.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol ComicsDetailsDisplayable: UIViewController {
-  func displayComicsDetails()
+protocol SeriesDetailsDisplayable: UIViewController {
+  func displaySeriesDetails()
 }
 
-final class ComicsDetailsViewController: UIViewController {
+final class SeriesDetailsViewController: UIViewController {
 
-  var interactor: ComicsDetailsInteractable?
+  var interactor: SeriesDetailsInteractable?
 
 
   // MARK: Init
@@ -45,8 +45,8 @@ final class ComicsDetailsViewController: UIViewController {
 
   private func setupScene() {
     let viewController = self
-    let presenter = ComicsDetailsPresenter()
-    let interactor = ComicsDetailsInteractor(presenter: presenter)
+    let presenter = SeriesDetailsPresenter()
+    let interactor = SeriesDetailsInteractor(presenter: presenter)
     viewController.interactor = interactor
     presenter.viewController = viewController
   }
@@ -55,8 +55,8 @@ final class ComicsDetailsViewController: UIViewController {
     view.backgroundColor = StyleProvider.backgroundColor  }
 }
 
-extension ComicsDetailsViewController: ComicsDetailsDisplayable {
+extension SeriesDetailsViewController: SeriesDetailsDisplayable {
 
-  func displayComicsDetails() {
+  func displaySeriesDetails() {
   }
 }
