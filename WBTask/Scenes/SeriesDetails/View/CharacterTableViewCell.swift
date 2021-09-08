@@ -64,12 +64,12 @@ class CharacterTableViewCell: BaseTableViewCell {
       make.bottom.equalToSuperview().offset(-StyleProvider.Paddings.small)
     }
     nameLabel.snp.makeConstraints { make in
-      make.top.equalToSuperview().offset(StyleProvider.Paddings.small).priority(.high)
+      make.top.equalToSuperview().offset(StyleProvider.Paddings.small)
       make.leading.equalTo(thumbnailImage.snp.trailing).offset(StyleProvider.Paddings.small)
       make.trailing.equalToSuperview().offset(-StyleProvider.Paddings.small)
     }
     descriptionLabel.snp.makeConstraints { make in
-      make.top.equalTo(nameLabel.snp.bottom).offset(StyleProvider.Paddings.small)
+      make.top.equalTo(nameLabel.snp.bottom).offset(StyleProvider.Paddings.small).priority(.high)
       make.leading.trailing.equalTo(nameLabel)
       make.bottom.equalToSuperview().offset(-StyleProvider.Paddings.small)
     }
@@ -78,6 +78,10 @@ class CharacterTableViewCell: BaseTableViewCell {
   func setCharacterCell(_ character: SeriesCharacter) {
     thumbnailImage.kf.setImage(with: character.thumbnail.getURL(with: .portrait))
     nameLabel.text = character.name
+    guard !character.description.isEmpty else {
+      descriptionLabel.removeFromSuperview()
+      return
+    }
     descriptionLabel.text = character.description
   }
 }

@@ -306,8 +306,8 @@
 				0C78FC1526E3F1EF00E7A134 /* Utilites */,
 				0CCE9D6726E3D3B700FAC003 /* Resources */,
 				0CCE9D6526E3D39600FAC003 /* Providers */,
-				0CCE9D6626E3D3AC00FAC003 /* Scenes */,
 				0C4CE4EC26E670B20059E246 /* Models */,
+				0CCE9D6626E3D3AC00FAC003 /* Scenes */,
 			);
 			path = WBTask;
 			sourceTree = "<group>";
