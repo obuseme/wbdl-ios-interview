@@ -38,8 +38,8 @@ extension RequestParameters {
 
   static func defaultParameters() -> RequestParameters {
     let timestamp = "\(Date().timeIntervalSince1970)"
-    let publicKey: String = NetworkProvider.publicKey
-    let privateKey: String = NetworkProvider.privateKey
+    let publicKey: String = Configuration.publicKey
+    let privateKey: String = Configuration.privateKey
 
     return .url([
     Keys.timestamp.rawValue: timestamp,
