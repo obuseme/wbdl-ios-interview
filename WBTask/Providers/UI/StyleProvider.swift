@@ -10,6 +10,7 @@ import UIKit
 struct StyleProvider {
   static let titleFont = UIFont.systemFont(ofSize: 22, weight: .bold)
   static let subtitleFont = UIFont.systemFont(ofSize: 16, weight: .regular)
+  static let subtitleBoldFont = UIFont.systemFont(ofSize: 16, weight: .bold)
   static let cellFont = UIFont.systemFont(ofSize: 14, weight: .regular)
 
   static let backgroundColor = UIColor.black

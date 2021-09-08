@@ -94,8 +94,8 @@ extension HomeSeriesViewController: HomeSeriesDisplayable {
 
 extension HomeSeriesViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    if let cell = tableView.dequeueReusableCell(withIdentifier: SeriesTableViewCell.typeString, for: indexPath) as? SeriesTableViewCell, let comics = viewModel?[indexPath.row] {
-      cell.setComicsCell(comics)
+    if let cell = tableView.dequeueReusableCell(withIdentifier: SeriesTableViewCell.typeString, for: indexPath) as? SeriesTableViewCell, let series = viewModel?[indexPath.row] {
+      cell.setSeriesCell(series)
       return cell
     }
     return UITableViewCell()

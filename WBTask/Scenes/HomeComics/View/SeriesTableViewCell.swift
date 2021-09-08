@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class SeriesTableViewCell: UITableViewCell {
+class SeriesTableViewCell: BaseTableViewCell {
 
   // MARK: - UI
 
@@ -74,10 +74,6 @@ class SeriesTableViewCell: UITableViewCell {
   // MARK: - Layout
 
   private func setupUI() {
-    contentView.backgroundColor = StyleProvider.backgroundColor
-    selectionStyle = .none
-    backgroundColor = .white
-
     contentView.addSubview(thumbnailImage)
     contentView.addSubview(titleLabel)
     contentView.addSubview(countImage)
@@ -86,7 +82,7 @@ class SeriesTableViewCell: UITableViewCell {
     contentView.addSubview(datesLabel)
 
     thumbnailImage.snp.makeConstraints { make in
-      make.top.leading.bottom.equalToSuperview().offset(StyleProvider.Paddings.medium)
+      make.top.leading.equalToSuperview().offset(StyleProvider.Paddings.medium)
       make.height.equalTo(150)
       make.width.equalTo(100)
       make.bottom.equalToSuperview()
@@ -116,7 +112,7 @@ class SeriesTableViewCell: UITableViewCell {
     }
   }
 
-  func setComicsCell(_ series: Series) {
+  func setSeriesCell(_ series: Series) {
     thumbnailImage.kf.setImage(with: series.thumbnail.getURL(with: .portrait))
     titleLabel.text = series.title
     countLabel.text = "\(series.comics.available)"

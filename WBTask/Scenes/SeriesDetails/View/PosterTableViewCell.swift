@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class PosterTableViewCell: UITableViewCell {
+class PosterTableViewCell: BaseTableViewCell {
 
   // MARK: - UI
 
@@ -33,10 +33,7 @@ class PosterTableViewCell: UITableViewCell {
   // MARK: - Layout
 
   private func setupUI() {
-    contentView.backgroundColor = StyleProvider.backgroundColor
     posterImage.backgroundColor = StyleProvider.backgroundColor
-    selectionStyle = .none
-    backgroundColor = .white
     clipsToBounds = true
 
     contentView.addSubview(posterImage)

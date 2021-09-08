@@ -3,7 +3,6 @@
 //  WBTask
 //
 //  Created by Ugur on 07/09/2021.
-//  Copyright (c) 2021 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
 import UIKit
@@ -28,6 +27,10 @@ final class SeriesDetailsViewController: UIViewController {
     tableView.rowHeight = UITableView.automaticDimension
     tableView.estimatedRowHeight = 150
     tableView.register(PosterTableViewCell.self, forCellReuseIdentifier: PosterTableViewCell.typeString)
+    tableView.register(TitleTableViewCell.self, forCellReuseIdentifier: TitleTableViewCell.typeString)
+    tableView.register(CharacterTableViewCell.self, forCellReuseIdentifier: CharacterTableViewCell.typeString)
+    tableView.register(ComicsTableViewCell.self, forCellReuseIdentifier: ComicsTableViewCell.typeString)
+
     return tableView
   }()
 
@@ -100,8 +103,21 @@ extension SeriesDetailsViewController: UITableViewDataSource {
         cell.setPosterCell(thumbnail)
         return cell
       }
-    default:
-      return UITableViewCell()
+    case .title(let label, let title):
+      if let cell = tableView.dequeueReusableCell(withIdentifier: TitleTableViewCell.typeString, for: indexPath) as? TitleTableViewCell {
+        cell.setTitleCell(label, title: title)
+        return cell
+      }
+    case .character(let character):
+      if let cell = tableView.dequeueReusableCell(withIdentifier: CharacterTableViewCell.typeString, for: indexPath) as? CharacterTableViewCell {
+        cell.setCharacterCell(character)
+        return cell
+      }
+    case .comics(let comics):
+      if let cell = tableView.dequeueReusableCell(withIdentifier: ComicsTableViewCell.typeString, for: indexPath) as? ComicsTableViewCell {
+        cell.setComicsCell(comics)
+        return cell
+      }
     }
     return UITableViewCell()
   }

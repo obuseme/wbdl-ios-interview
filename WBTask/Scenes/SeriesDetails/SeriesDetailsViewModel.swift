@@ -9,8 +9,8 @@ import Foundation
 
 enum SeriesDetailsSectionType {
   case poster(thumbnail: Thumbnail)
-  case title(title: String)
-  case characters(characters: [SeriesCharacter])
+  case title(label: String, title: String?)
+  case character(character: SeriesCharacter)
   case comics(comics: [Comics])
 }
 
@@ -20,12 +20,20 @@ struct SeriesDetailsViewModel {
   init(series: Series, characters: [SeriesCharacter]?, comics: [Comics]?) {
     var viewTypes: [SeriesDetailsSectionType] = []
 
+    // poster cell
     viewTypes.append(.poster(thumbnail: series.thumbnail))
-    viewTypes.append(.title(title: series.title))
-    if let characters = characters {
-      viewTypes.append(.characters(characters: characters))
+    // series title cell
+    viewTypes.append(.title(label: "NAME", title: series.title))
+    // character cells
+    if let characters = characters, !characters.isEmpty {
+      viewTypes.append(.title(label: "CHARACTERS", title: nil))
+      for character in characters {
+        viewTypes.append(.character(character: character))
+      }
     }
-    if let comics = comics {
+    // comics cells
+    if let comics = comics, !comics.isEmpty {
+      viewTypes.append(.title(label: "COMICS", title: nil))
       viewTypes.append(.comics(comics: comics))
     }
 
