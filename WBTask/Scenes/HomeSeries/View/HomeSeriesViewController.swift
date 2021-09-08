@@ -82,6 +82,10 @@ final class HomeSeriesViewController: UIViewController {
     view.backgroundColor = StyleProvider.lightBackgroundColor
     tableView.backgroundColor = StyleProvider.lightBackgroundColor
 
+    let logo = UIImageView(image: UIImage(named: "logo"))
+    logo.contentMode = .scaleAspectFit
+    navigationItem.titleView = logo
+
     view.addSubview(tableView)
 
     tableView.snp.makeConstraints { make in
