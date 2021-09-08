@@ -18,8 +18,13 @@ struct Thumbnail: Codable {
 }
 
 extension Thumbnail {
-  var url: URL? {
-    let urlString = [path + "/portrait_xlarge." + type].joined()
+  enum Size: String {
+    case portrait = "portrait_xlarge"
+    case landscape = "landscape_incredible"
+  }
+
+  func getURL(with size: Size) -> URL? {
+    let urlString = [path + "/" + size.rawValue + "." + type].joined()
     return URL(string: urlString)
   }
 }

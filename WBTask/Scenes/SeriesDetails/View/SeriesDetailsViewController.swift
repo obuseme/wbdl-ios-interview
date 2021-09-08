@@ -16,6 +16,20 @@ final class SeriesDetailsViewController: UIViewController {
 
   var interactor: SeriesDetailsInteractable?
 
+  private var sections: [SeriesDetailsSectionType] = []
+
+  // MARK: UI
+
+  private lazy var tableView: UITableView = {
+    let tableView = UITableView()
+    tableView.dataSource = self
+    tableView.separatorStyle = .none
+    tableView.allowsSelection = true
+    tableView.rowHeight = UITableView.automaticDimension
+    tableView.estimatedRowHeight = 150
+    tableView.register(PosterTableViewCell.self, forCellReuseIdentifier: PosterTableViewCell.typeString)
+    return tableView
+  }()
 
   // MARK: Init
 
@@ -54,11 +68,47 @@ final class SeriesDetailsViewController: UIViewController {
   }
 
   private func setupUI() {
-    view.backgroundColor = StyleProvider.backgroundColor  }
+    view.backgroundColor = StyleProvider.lightBackgroundColor
+    tableView.backgroundColor = StyleProvider.lightBackgroundColor
+
+    view.addSubview(tableView)
+
+    tableView.snp.makeConstraints { make in
+      make.edges.equalTo(view.safeAreaLayoutGuide)
+    }
+  }
 }
 
 extension SeriesDetailsViewController: SeriesDetailsDisplayable {
 
   func displaySeriesDetails(viewModel: SeriesDetailsViewModel) {
+    sections = viewModel.sections
+
+    DispatchQueue.main.async {
+      self.tableView.reloadData()
+    }
   }
+}
+
+// MARK: UITableViewDataSource
+
+extension SeriesDetailsViewController: UITableViewDataSource {
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    switch sections[indexPath.row] {
+    case .poster(let thumbnail):
+      if let cell = tableView.dequeueReusableCell(withIdentifier: PosterTableViewCell.typeString, for: indexPath) as? PosterTableViewCell {
+        cell.setPosterCell(thumbnail)
+        return cell
+      }
+    default:
+      return UITableViewCell()
+    }
+    return UITableViewCell()
+  }
+
+
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return sections.count
+  }
+
 }

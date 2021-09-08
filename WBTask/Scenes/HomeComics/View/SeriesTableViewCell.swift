@@ -15,7 +15,6 @@ class SeriesTableViewCell: UITableViewCell {
   private lazy var thumbnailImage: UIImageView = {
     let imageView = UIImageView()
     imageView.contentMode = .scaleAspectFill
-    imageView.clipsToBounds = true
     imageView.layer.cornerRadius = 4
     imageView.clipsToBounds = true
     return imageView
@@ -118,7 +117,7 @@ class SeriesTableViewCell: UITableViewCell {
   }
 
   func setComicsCell(_ series: Series) {
-    thumbnailImage.kf.setImage(with: series.thumbnail.url)
+    thumbnailImage.kf.setImage(with: series.thumbnail.getURL(with: .portrait))
     titleLabel.text = series.title
     countLabel.text = "\(series.comics.available)"
     datesLabel.text = "\(series.startYear) - \(series.endYear)"
