@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C213F5426E8A74400226911 /* SeriesDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C213F5326E8A74400226911 /* SeriesDetailsViewModel.swift */; };
 		0C552F7126E7C7F100E16872 /* SeriesDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C552F6C26E7C7F100E16872 /* SeriesDetailsPresenter.swift */; };
 		0C552F7226E7C7F100E16872 /* SeriesDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C552F6D26E7C7F100E16872 /* SeriesDetailsWorker.swift */; };
 		0C552F7426E7C7F100E16872 /* SeriesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C552F6F26E7C7F100E16872 /* SeriesDetailsViewController.swift */; };
@@ -64,6 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C213F5326E8A74400226911 /* SeriesDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDetailsViewModel.swift; sourceTree = "<group>"; };
 		0C552F6C26E7C7F100E16872 /* SeriesDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDetailsPresenter.swift; sourceTree = "<group>"; };
 		0C552F6D26E7C7F100E16872 /* SeriesDetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDetailsWorker.swift; sourceTree = "<group>"; };
 		0C552F6F26E7C7F100E16872 /* SeriesDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDetailsViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +147,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		0C213F5226E8A70900226911 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0C552F6F26E7C7F100E16872 /* SeriesDetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		0C4CE4EC26E670B20059E246 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,10 +169,11 @@
 		0C552F6B26E7C7B600E16872 /* SeriesDetails */ = {
 			isa = PBXGroup;
 			children = (
-				0C552F6F26E7C7F100E16872 /* SeriesDetailsViewController.swift */,
+				0C213F5226E8A70900226911 /* View */,
 				0C552F7026E7C7F100E16872 /* SeriesDetailsInteractor.swift */,
 				0C552F6D26E7C7F100E16872 /* SeriesDetailsWorker.swift */,
 				0C552F6C26E7C7F100E16872 /* SeriesDetailsPresenter.swift */,
+				0C213F5326E8A74400226911 /* SeriesDetailsViewModel.swift */,
 			);
 			path = SeriesDetails;
 			sourceTree = "<group>";
@@ -555,6 +566,7 @@
 				0C59D53726E12BAD0071DEB2 /* AppDelegate.swift in Sources */,
 				0C552F7226E7C7F100E16872 /* SeriesDetailsWorker.swift in Sources */,
 				0C8FE63126E67A9400F2C930 /* HomeSeriesViewController.swift in Sources */,
+				0C213F5426E8A74400226911 /* SeriesDetailsViewModel.swift in Sources */,
 				0C552F7826E7C95A00E16872 /* SeriesDetailsService.swift in Sources */,
 				0C552F8026E7DD6600E16872 /* Thumbnail.swift in Sources */,
 				0C8FE63226E67A9400F2C930 /* HomeSeriesInteractor.swift in Sources */,

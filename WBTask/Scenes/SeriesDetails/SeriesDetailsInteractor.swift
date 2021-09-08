@@ -38,7 +38,7 @@ init(presenter: SeriesDetailsPresentable, worker: SeriesDetailsWorkable = Series
   // MARK: SeriesDetailsInteractable
 
   func fetchSeriesDetails() {
-    guard let seriesId = series?.id else {
+    guard let series = series else {
       return
     }
 
@@ -48,7 +48,7 @@ init(presenter: SeriesDetailsPresentable, worker: SeriesDetailsWorkable = Series
 
     // fetching Characters
     group.enter()
-    worker.fetchCharacters(for: seriesId) { [weak self] response in
+    worker.fetchCharacters(for: series.id) { [weak self] response in
       switch response {
       case .success(let seriesCharacters):
         self?.characters = seriesCharacters.data.results
@@ -60,7 +60,7 @@ init(presenter: SeriesDetailsPresentable, worker: SeriesDetailsWorkable = Series
 
     // fetching Comics
     group.enter()
-    worker.fetchComics(for: seriesId) { [weak self] response in
+    worker.fetchComics(for: series.id) { [weak self] response in
       switch response {
       case .success(let seriesComics):
         self?.comics = seriesComics.data.results
@@ -77,7 +77,7 @@ init(presenter: SeriesDetailsPresentable, worker: SeriesDetailsWorkable = Series
         self.presenter.presentAlert(title: "Error", message: error.description)
         self.error = nil
       } else {
-        self.presenter.presentSeriesDetails()
+        self.presenter.presentSeriesDetails(series: series, characters: self.characters, comics: self.comics)
       }
     }
   }

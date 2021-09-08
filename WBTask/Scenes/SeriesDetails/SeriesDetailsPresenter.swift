@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SeriesDetailsPresentable: LoadingPresentable, AlertPresentable {
-  func presentSeriesDetails()
+  func presentSeriesDetails(series: Series, characters: [SeriesCharacter]?, comics: [Comics]?)
 }
 
 class SeriesDetailsPresenter: SeriesDetailsPresentable {
@@ -17,7 +17,9 @@ class SeriesDetailsPresenter: SeriesDetailsPresentable {
 
   // MARK: SeriesDetailsPresentable
 
-  func presentSeriesDetails() {
+  func presentSeriesDetails(series: Series, characters: [SeriesCharacter]?, comics: [Comics]?) {
+    let viewModel = SeriesDetailsViewModel(series: series, characters: characters, comics: comics)
+    viewController?.displaySeriesDetails(viewModel: viewModel)
   }
 
   // MARK: LoadingPresentable

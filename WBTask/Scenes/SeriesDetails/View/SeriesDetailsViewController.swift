@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SeriesDetailsDisplayable: LoadingDisplayable, AlertDisplayable {
-  func displaySeriesDetails()
+  func displaySeriesDetails(viewModel: SeriesDetailsViewModel)
 }
 
 final class SeriesDetailsViewController: UIViewController {
@@ -59,6 +59,6 @@ final class SeriesDetailsViewController: UIViewController {
 
 extension SeriesDetailsViewController: SeriesDetailsDisplayable {
 
-  func displaySeriesDetails() {
+  func displaySeriesDetails(viewModel: SeriesDetailsViewModel) {
   }
 }
