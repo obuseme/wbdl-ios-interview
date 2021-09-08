@@ -9,7 +9,7 @@ import XCTest
 @testable import WBTask
 
 // swiftlint:disable implicitly_unwrapped_optional
-class NetworkProviderTests: XCTestCase {
+final class NetworkProviderTests: XCTestCase {
 
   private var networkProvider: NetworkProviderMock!
   private var networkRequestMock: NetworkRequestMock!

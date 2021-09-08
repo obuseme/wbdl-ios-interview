@@ -9,7 +9,8 @@
 import XCTest
 
 // swiftlint:disable implicitly_unwrapped_optional
-class HomeSeriesViewControllerTests: XCTestCase {
+// swiftlint:disable force_unwrapping
+final class HomeSeriesViewControllerTests: XCTestCase {
 
   // MARK: Subject under test
 
@@ -38,5 +39,57 @@ class HomeSeriesViewControllerTests: XCTestCase {
     }
   }
 
+  class TableViewSpy: UITableView {
+    var reloadDataCalled = false
+
+    override func reloadData() {
+      reloadDataCalled = true
+    }
+  }
+
+
   // MARK: Tests
+
+  func testShouldFetchSeriesWhenViewDidLoad() {
+    // Given
+    let interactor = HomeSeriesInteractorSpy()
+    sut.interactor = interactor
+
+    // When
+    sut.viewDidLoad()
+
+    // Then
+    XCTAssert(interactor.fetchHomeSeriesCalled, "Should series list when view is loaded")
+  }
+
+  func testShouldDisplayFetchedSeies() {
+    // Given
+    let tableViewSpy = TableViewSpy()
+    sut.tableView = tableViewSpy
+
+    let series = BaseTestCase.getHomeSeries()!.data.results
+
+    // When
+    sut.displayHomeSeries(viewModel: series)
+
+    // Then
+    DispatchQueue.main.async {
+      XCTAssert(tableViewSpy.reloadDataCalled, "Displaying fetched series list should reload the table view")
+    }
+  }
+
+  func testNumberOfRowsInTeaserSectionToDisplay() {
+    // Given
+    let tableViewSpy = TableViewSpy()
+    sut.tableView = tableViewSpy
+
+    let series = BaseTestCase.getHomeSeries()!.data.results
+
+    // When
+    sut.displayHomeSeries(viewModel: series)
+    let numberOfRows = sut.tableView(tableViewSpy, numberOfRowsInSection: 1)
+
+    // Then
+    XCTAssertEqual(numberOfRows, series.count, "The number of tableview rows should equal the number of series list to display")
+  }
 }

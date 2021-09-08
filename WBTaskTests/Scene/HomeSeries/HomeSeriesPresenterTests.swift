@@ -9,7 +9,8 @@
 import XCTest
 
 // swiftlint:disable implicitly_unwrapped_optional
-class HomeSeriesPresenterTests: XCTestCase {
+// swiftlint:disable force_unwrapping
+final class HomeSeriesPresenterTests: XCTestCase {
 
   // MARK: Subject under test
 
@@ -51,4 +52,52 @@ class HomeSeriesPresenterTests: XCTestCase {
 
   // MARK: Tests
 
+  func testHomeSeriesCalledByPresenter() {
+    // Given
+    let viewControllerSpy = HomeSeriesViewControllerSpy()
+    let sut = HomeSeriesPresenter()
+    sut.viewController = viewControllerSpy
+
+    let homeSeries = BaseTestCase.getHomeSeries()!
+
+    // When
+    sut.presentHomeSeries(for: homeSeries.data.results)
+    // Then
+    XCTAssert(viewControllerSpy.displayHomeSeriesCalled, "presentHomeSeries() should ask the view controller to display series list")
+  }
+
+  func testDisplayLoadingCalledByPresenter() {
+    // Given
+    let viewControllerSpy = HomeSeriesViewControllerSpy()
+    let sut = HomeSeriesPresenter()
+    sut.viewController = viewControllerSpy
+
+    // When
+    sut.presentLoading()
+    // ThenpresentLoading    XCTAssert(viewControllerSpy.displayLoadingCalled, "presentMovieDetail() should ask the view controller to display loading")
+  }
+
+  func testDismissLoadingCalledByPresenter() {
+    // Given
+    let viewControllerSpy = HomeSeriesViewControllerSpy()
+    let sut = HomeSeriesPresenter()
+    sut.viewController = viewControllerSpy
+
+    // When
+    sut.dismissLoading()
+    // Then
+    XCTAssert(viewControllerSpy.dismissLoadingCalled, "dismissLoading() should ask the view controller to dismiss loading")
+  }
+
+  func testDisplayAlertCalledByPresenter() {
+    // Given
+    let viewControllerSpy = HomeSeriesViewControllerSpy()
+    let sut = HomeSeriesPresenter()
+    sut.viewController = viewControllerSpy
+
+    // When
+    sut.presentAlert(title: "Test Title", message: "Test Message")
+    // Then
+    XCTAssert(viewControllerSpy.displayAlertCalled, "presentAlert() should ask the view controller to display alert")
+  }
 }

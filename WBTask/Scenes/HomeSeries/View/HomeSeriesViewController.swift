@@ -30,7 +30,7 @@ final class HomeSeriesViewController: UIViewController {
 
   // MARK: UI
 
-  private lazy var tableView: UITableView = {
+  lazy var tableView: UITableView = {
     let tableView = UITableView()
     tableView.delegate = self
     tableView.dataSource = self
@@ -42,12 +42,24 @@ final class HomeSeriesViewController: UIViewController {
     return tableView
   }()
 
+  // MARK: Init
+
+  init() {
+    super.init(nibName: nil, bundle: nil)
+    setupScene()
+
+    setupScene()
+  }
+
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+
   // MARK: View lifecycle
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    setupScene()
     setupUI()
 
     interactor?.fetchHomeSeries()
@@ -75,10 +87,6 @@ final class HomeSeriesViewController: UIViewController {
     tableView.snp.makeConstraints { make in
       make.edges.equalTo(view.safeAreaLayoutGuide)
     }
-  }
-
-  private func setupAccessibilityIdentifers() {
-
   }
 }
 
