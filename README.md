@@ -16,40 +16,40 @@ To pass the test, the app has to include the following:
 
 * Fetch comic series and display them. (https://developer.marvel.com/docs#!/public/getSeriesCollection_get_25)
 * For each comic series you have to display **at least**:
-	* Title
-	* Thumbnail
-	* Number of comics
-	* Start and end date
-* The results should be sorted by start year.
+	* [x]Title
+	* [x]Thumbnail
+	* [x]Number of comics
+	* [x]Start and end date
+* [x]The results should be sorted by start year.
 
 * Each comic series result should be tappable and show a detail screen for the series. On the detail screen, you have to display **at least**:
 	* A header view that shows at least:
-		* Comic series title
-		* Comic series thumbnail
-		* A couple of the characters in the series (https://developer.marvel.com/docs#!/public/getSeriesCharacterWrapper_get_27) including:
-			* Character name
-			* Character description
-	* The list books in the selected comic series (https://developer.marvel.com/docs#!/public/getComicsCollection_get_28)
+		* [x]Comic series title
+		* [x]Comic series thumbnail
+		* [x]A couple of the characters in the series (https://developer.marvel.com/docs#!/public/getSeriesCharacterWrapper_get_27) including:
+			* [x]Character name
+			* [x]Character description
+	* [x]The list books in the selected comic series (https://developer.marvel.com/docs#!/public/getComicsCollection_get_28)
 	* For each comic book in the series, you have to display **at least**:
-		* Title
-		* Thumbnail
-		* Issue number
+		* [x]Title
+		* [x]Thumbnail
+		* [x]Issue number
 * Note: The detail screen requires two API calls - one for the first page of comics in the series, and one for the first page of characters in the series.  The UI of the screen should remain in a loading state until both API requests complete.
 
 ## Requirements
-* Use Swift 5.0 or above.
-* Use Auto Layout or SwiftUI
-* There should be no errors, warnings or crashes
-* The app should compile and run. If it needs additional setup, include instructions in the README.
+* [x]Use Swift 5.0 or above.
+* [x]Use Auto Layout or SwiftUI
+* [x]There should be no errors, warnings or crashes
+* [x]The app should compile and run. If it needs additional setup, include instructions in the README.
 
 ## Bonus Points
 * Wow us or teach us something with your code
-* Paginate through the API requests for comic series, or the books in a series
-* Use SwiftUI and/or Combine
-* Add automated tests
-* Use an iOS 15 API or Feature
-* Add local persistence for the data and synchronize it with the server
-* Don't use any 3rd party libraries
+* [x]Paginate through the API requests for comic series, or the books in a series
+* [x]Use SwiftUI and/or Combine
+* [x]Add automated tests
+* [x]Use an iOS 15 API or Feature
+* []Add local persistence for the data and synchronize it with the server
+* [x]Don't use any 3rd party libraries
 
 ## Guidelines
 * Keep your files short and sweet, use extensions and break out helpers when appropriate.
