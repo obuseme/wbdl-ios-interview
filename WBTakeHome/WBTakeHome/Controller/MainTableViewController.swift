@@ -61,12 +61,10 @@ class MainTableViewController: UITableViewController {
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    // Create a variable that you want to send
     guard let indexPath = tableView.indexPathForSelectedRow else {
       return
     }
-    var selectedComic = comicSeries[indexPath.row]
-    
+    let selectedComic = comicSeries[indexPath.row]
     let destinationVC = segue.destination as! DetailViewController
     destinationVC.comic = selectedComic
   }

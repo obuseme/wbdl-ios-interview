@@ -19,6 +19,9 @@
 		B619409927BAFC4800F34A95 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619409827BAFC4800F34A95 /* NetworkService.swift */; };
 		B619409B27BAFE4800F34A95 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619409A27BAFE4800F34A95 /* NetworkError.swift */; };
 		B619409E27BB06FA00F34A95 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619409D27BB06FA00F34A95 /* Extension.swift */; };
+		B61940A027BB12CD00F34A95 /* ComicBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = B619409F27BB12CD00F34A95 /* ComicBook.swift */; };
+		B61940A227BB136700F34A95 /* ComicCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61940A127BB136700F34A95 /* ComicCharacter.swift */; };
+		B61940A427BB22B700F34A95 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61940A327BB22B700F34A95 /* CharacterCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		B619409827BAFC4800F34A95 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		B619409A27BAFE4800F34A95 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		B619409D27BB06FA00F34A95 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		B619409F27BB12CD00F34A95 /* ComicBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicBook.swift; sourceTree = "<group>"; };
+		B61940A127BB136700F34A95 /* ComicCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCharacter.swift; sourceTree = "<group>"; };
+		B61940A327BB22B700F34A95 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,7 @@
 				B619407E27BAFA6900F34A95 /* Main.storyboard */,
 				B619408327BAFA6B00F34A95 /* LaunchScreen.storyboard */,
 				B619409527BAFBA300F34A95 /* SerieCell.swift */,
+				B61940A327BB22B700F34A95 /* CharacterCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -112,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				B619409027BAFAC000F34A95 /* ComicSerie.swift */,
+				B619409F27BB12CD00F34A95 /* ComicBook.swift */,
+				B61940A127BB136700F34A95 /* ComicCharacter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,10 +216,13 @@
 				B619409E27BB06FA00F34A95 /* Extension.swift in Sources */,
 				B619409627BAFBA300F34A95 /* SerieCell.swift in Sources */,
 				B619409B27BAFE4800F34A95 /* NetworkError.swift in Sources */,
+				B61940A427BB22B700F34A95 /* CharacterCell.swift in Sources */,
 				B619407D27BAFA6900F34A95 /* MainTableViewController.swift in Sources */,
 				B619407927BAFA6900F34A95 /* AppDelegate.swift in Sources */,
 				B619409427BAFAF100F34A95 /* DetailViewController.swift in Sources */,
 				B619409127BAFAC000F34A95 /* ComicSerie.swift in Sources */,
+				B61940A227BB136700F34A95 /* ComicCharacter.swift in Sources */,
+				B61940A027BB12CD00F34A95 /* ComicBook.swift in Sources */,
 				B619407B27BAFA6900F34A95 /* SceneDelegate.swift in Sources */,
 				B619409927BAFC4800F34A95 /* NetworkService.swift in Sources */,
 			);
