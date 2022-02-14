@@ -29,7 +29,6 @@ class MainTableViewController: UITableViewController {
         print(error)
       }
     }
-    // Do any additional setup after loading the view.
   }
   
   
@@ -51,14 +50,26 @@ class MainTableViewController: UITableViewController {
     
     cell.serieThumbnail.downloaded(from: finalURLImage)
     cell.setNeedsDisplay()
-
+    
     return cell
   }
   
-  
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let comic = comicSeries[indexPath.row]
+    print(comic.id)
     tableView.deselectRow(at: indexPath, animated: true)
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    // Create a variable that you want to send
+    guard let indexPath = tableView.indexPathForSelectedRow else {
+      return
+    }
+    var selectedComic = comicSeries[indexPath.row]
+    
+    let destinationVC = segue.destination as! DetailViewController
+    destinationVC.comic = selectedComic
+  }
 }
+
 
