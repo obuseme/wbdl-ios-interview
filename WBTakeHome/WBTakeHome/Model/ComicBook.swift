@@ -12,3 +12,11 @@ struct ComicBook: Codable {
   let issueNumber: Double?
   let thumbnail: Thumbnail
 }
+
+struct `ComicBookData`: Codable {
+  let results: [ComicBook]
+}
+
+struct ComicBookJSONPayload: Codable {
+  let data: `ComicBookData`
+}

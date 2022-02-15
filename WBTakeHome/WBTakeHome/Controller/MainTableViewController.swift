@@ -31,7 +31,6 @@ class MainTableViewController: UITableViewController {
     }
   }
   
-  
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return comicSeries.count
   }
@@ -56,7 +55,6 @@ class MainTableViewController: UITableViewController {
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let comic = comicSeries[indexPath.row]
-    print(comic.id)
     tableView.deselectRow(at: indexPath, animated: true)
   }
   
@@ -69,5 +67,3 @@ class MainTableViewController: UITableViewController {
     destinationVC.comic = selectedComic
   }
 }
-
-

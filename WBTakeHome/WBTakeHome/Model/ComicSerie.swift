@@ -8,10 +8,10 @@
 import Foundation
 
 struct JSONPayload: Codable {
-  let data: `Data`
+  let data: ComicSerieData
 }
 
-struct `Data`: Codable {
+struct ComicSerieData: Codable {
   let results: [ComicSerie]
 }
 
